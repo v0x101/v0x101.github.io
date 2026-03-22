@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- This file is based on the corresponding file in the repository https://github.com/pages-themes/cayman -->
+
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <script>
+      function style_synopsis() {
+        var elems = document.getElementsByClassName("synopsis");
+        for (var i = 0; i < elems.length; i++) {
+          elems.item(i).style.setProperty("color", "#707070");
+        }
+      }
+    </script>
+    <meta charset="UTF-8">
+
+{% seo %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  </head>
+  <body onload="style_synopsis();">
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+    </main>
+<!--
+	These scripts need to be added to enable mathematical symbols - check the versions, the below versions may be outdated
+	
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" crossorigin="anonymous"></script>
+-->
+  </body>
+</html>
